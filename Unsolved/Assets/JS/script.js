@@ -1,58 +1,68 @@
-var questions = [
+let questions = [
     {
         title: "What is an array?",
         choice: ["Random items", "Green Beans", "A collection of similar data types", "Object based programming"],
         answer: "A collection of similar data types"
     },
     {
-        title: 
-        choice: []
-        answer:
+        title: "What is an array?",
+        choice: ["Random items", "Green Beans", "A collection of similar data types", "Object based programming"],
+        answer: "A collection of similar data types"
     },
     {
-        title:
-        choice: []
-        answer:
+        title: "What is an array?",
+        choice: ["Random items", "Green Beans", "A collection of similar data types", "Object based programming"],
+        answer: "A collection of similar data types"
     },
     {
-        title:
-        choice: []
-        answer:
+        title: "What is an array?",
+        choice: ["Random items", "Green Beans", "A collection of similar data types", "Object based programming"],
+        answer: "A collection of similar data types"
     },
     {
-        title:
-        choice: []
-        answer:
+        title: "What is an array?",
+        choice: ["Random items", "Green Beans", "A collection of similar data types", "Object based programming"],
+        answer: "A collection of similar data types"
     },
-    {
-        title:"";
-        choice: "";
-        answer: "";
-    },
-]
+];
 
-var currentQuestionIndex = 0;
-// Keeps track of the quiz
-var time = questions.length * 15;
-var timerId;
+let currentQuestionIndex = 0;
+let time = questions.length * 15;
+let timerId;
 
-var startBtn = document.querySelector("#start");
-var questionsElement = document.querySelector("#questions")
-var timerElement = document.querySelector("#time");
-var questionChoices = document.querySelector("#choices")
+let startBtn = document.querySelector("#start");
+let questionsElement = document.querySelector("#questions");
+let timerElement = document.querySelector("#time");
+let questionChoices = document.querySelector("#choices");
+
+startBtn.addEventListener("click", startQuiz )
 
 function startQuiz() {
-    var startScreen = document.querySelector("#start-screen");
+    let startScreen = document.querySelector("#start-screen");
     startScreen.setAttribute("class", "hide");
     questionsElement.removeAttribute("class");
-
+    console.log('Started')
     getCurrentQuestion();
 }
 
 function getCurrentQuestion() {
-    var currentQuestion = questions[currentQuestionIndex];
-    var titleElement = document.querySelector("question-title");
+    let currentQuestion = questions[currentQuestionIndex];
+    let titleElement = document.querySelector("question-title");
     titleElement.textContent = currentQuestion.title;
 
     questionChoices.textContent = "";
+
+    for (let i = 0; i < currentQuestion.choice.length; i++) {
+        let choiceNode = document.createElement("button");
+        choiceNode.setAttribute("class", "choice");
+        choiceNode.setAttribute("value", currentQuestion.choice[i]);
+
+        choiceNode.textContent = i + 1 + ". " + currentQuestion.choice[i];
+
+        questionChoices.appendChild(choiceNode);
+    }
+}
+
+function getAnswer() {
+
 }
