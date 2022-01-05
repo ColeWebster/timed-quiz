@@ -1,4 +1,8 @@
-# timed-quiz
+# Quiz
+
+https://github.com/ColeWebster/timed-quiz
+
+https://colewebster.github.io/timed-quiz/
  
 
 ## Added inital HTML frameworks and CSS Style 
@@ -38,3 +42,4 @@ created endpoint
 ## 01 05 2022
 
 Unable to get the scores to save when submitting. 
+
