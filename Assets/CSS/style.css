@@ -23,6 +23,8 @@ h1 {
   font-size: 5.4rem;
   color: #38686A;
   margin-bottom: 5rem;
+  align-items: center;
+  display: flex;
 }
 
 h1 > span {
@@ -84,9 +86,9 @@ h3 {
 /* Buttons */
 
 .btn {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding: 1rem 0;
-  width: 20rem;
+  width: 25rem;
   text-align: center;
   border: 0.1rem solid #38686A;
   margin-bottom: 1rem;
@@ -108,3 +110,20 @@ h3 {
   transform: none;
 }
 
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.8rem; 
+}
+
+input {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.8rem; 
+}
