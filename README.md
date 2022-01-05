@@ -1,5 +1,4 @@
-# timed-quiz
- 
+# Quiz
 
 https://github.com/ColeWebster/timed-quiz
 
