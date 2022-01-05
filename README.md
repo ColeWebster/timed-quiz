@@ -1,6 +1,11 @@
 # timed-quiz
  
 
+https://github.com/ColeWebster/timed-quiz
+
+https://colewebster.github.io/timed-quiz/
+ 
+
 ## Added inital HTML frameworks and CSS Style 
 
 ## 01 02 2022
