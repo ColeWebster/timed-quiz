@@ -2,6 +2,8 @@
 
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
+const questionCounterText = document.getElementById('questionCounter');
+const scoreText = document.getElementById('score');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -32,7 +34,7 @@ let questions = [
         choice2: '<JavaScripts syntax is loosely based on Javas>',
         choice3: '<They both originated on the island of Java>',
         choice4: '<None of the above>',
-        answer: 1
+        answer: 3
     },
     {
         question: 'What is an Element?',
@@ -50,7 +52,7 @@ let questions = [
         choice4: '<None of the above>',
         answer: 1
     },
-    
+
 ]
 
 const CORRECT_BONUS = 10;
@@ -65,10 +67,13 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS.length)
+    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS.length){
         return window.location.assign('/end.html');
+    }
     
     questionCounter++;
+    questionCounterText.innerText = questionCounter + '/' + MAX_QUESTIONS;
+
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -83,16 +88,29 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 };
 
-choices.forEach (choice  => {
-    choice.addEventListener('click', e =>{
-        if(!acceptingAnswers) return;
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if (!acceptingAnswers) return;
         acceptingAnswers = false;
         const selectedChoice = e.target;
-        const selectedAnswer =  selectedChoice.dataset['number'];
+        const selectedAnswer = selectedChoice.dataset['number'];
         console.log(selectedAnswer);
-        getNewQuestion();
+
         
+        const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+        if (classToApply === 'correct') {
+            incrementScore(CORRECT_BONUS);
+        }
+        
+        getNewQuestion();
+
     })
 })
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+}
 
 startGame();
