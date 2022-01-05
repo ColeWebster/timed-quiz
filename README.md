@@ -20,3 +20,17 @@ Added information to reflect lesson from after class
 Added questions array
 
 Added two test files - CSS and JS to try different approaches from videos and reading materials
+
+## 01 04 2022
+
+Removed test files, JS to become home for questions
+
+Added media files to CSS for scaling to mobile, tablet and desktop
+
+created the page to handle the game
+
+created buttons for clicking
+
+created questions and sample answers
+
+created endpoint
